@@ -1,0 +1,9 @@
+C:\Projects\Burger\Constants\bin\Debug\netcoreapp2.1\Constants.deps.json
+C:\Projects\Burger\Constants\bin\Debug\netcoreapp2.1\Constants.dll
+C:\Projects\Burger\Constants\bin\Debug\netcoreapp2.1\Constants.pdb
+C:\Projects\Burger\Constants\obj\Debug\netcoreapp2.1\Constants.csprojAssemblyReference.cache
+C:\Projects\Burger\Constants\obj\Debug\netcoreapp2.1\Constants.csproj.CoreCompileInputs.cache
+C:\Projects\Burger\Constants\obj\Debug\netcoreapp2.1\Constants.AssemblyInfoInputs.cache
+C:\Projects\Burger\Constants\obj\Debug\netcoreapp2.1\Constants.AssemblyInfo.cs
+C:\Projects\Burger\Constants\obj\Debug\netcoreapp2.1\Constants.dll
+C:\Projects\Burger\Constants\obj\Debug\netcoreapp2.1\Constants.pdb
