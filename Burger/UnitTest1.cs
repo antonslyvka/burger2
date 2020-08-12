@@ -4,9 +4,9 @@ using OpenQA.Selenium.Chrome;
 using System;
 using System.IO;
 using System.Reflection;
-using static Constants.BaseConstants;
-using static Functions.BaseFunctions;
-using static Functions.TestFunctions;
+using static Burger.Constants.BaseConstants;
+using static Burger.Functions.BaseFunctions;
+using static Burger.Functions.TestFunctions;
 
 
 

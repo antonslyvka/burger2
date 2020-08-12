@@ -3736,11 +3736,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projects\\Burger\\Functions\\Functions.csproj",
+      "projectUniqueName": "C:\\Projects\\Burger2\\Functions\\Functions.csproj",
       "projectName": "Functions",
-      "projectPath": "C:\\Projects\\Burger\\Functions\\Functions.csproj",
+      "projectPath": "C:\\Projects\\Burger2\\Functions\\Functions.csproj",
       "packagesPath": "C:\\Users\\arian\\.nuget\\packages\\",
-      "outputPath": "C:\\Projects\\Burger\\Functions\\obj\\",
+      "outputPath": "C:\\Projects\\Burger2\\Functions\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

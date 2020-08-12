@@ -8,7 +8,6 @@
     ".NETCoreApp,Version=v2.1": {
       "Burger/1.0.0": {
         "dependencies": {
-          "Constants": "1.0.0",
           "Functions": "1.0.0",
           "Microsoft.NET.Test.Sdk": "16.6.1",
           "NUnit3TestAdapter": "3.17.0",
@@ -842,11 +841,6 @@
         }
       },
       "WebDriver.ChromeDriver.win32/83.0.4103.39": {},
-      "Constants/1.0.0": {
-        "runtime": {
-          "Constants.dll": {}
-        }
-      },
       "Functions/1.0.0": {
         "dependencies": {
           "NUnit": "3.12.0",
@@ -1306,11 +1300,6 @@
       "sha512": "sha512-GyoOTiX/Qa54JktXU12fDamOl/4+3noEkqzoRxHZVlPP9FmcanJ8UxEliJJQo6dRrSnmKpR9U5htel3Ydva6rw==",
       "path": "webdriver.chromedriver.win32/83.0.4103.39",
       "hashPath": "webdriver.chromedriver.win32.83.0.4103.39.nupkg.sha512"
-    },
-    "Constants/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
     },
     "Functions/1.0.0": {
       "type": "project",

@@ -694,11 +694,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projects\\Burger\\Constants\\Constants.csproj",
+      "projectUniqueName": "C:\\Projects\\Burger2\\Constants\\Constants.csproj",
       "projectName": "Constants",
-      "projectPath": "C:\\Projects\\Burger\\Constants\\Constants.csproj",
+      "projectPath": "C:\\Projects\\Burger2\\Constants\\Constants.csproj",
       "packagesPath": "C:\\Users\\arian\\.nuget\\packages\\",
-      "outputPath": "C:\\Projects\\Burger\\Constants\\obj\\",
+      "outputPath": "C:\\Projects\\Burger2\\Constants\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

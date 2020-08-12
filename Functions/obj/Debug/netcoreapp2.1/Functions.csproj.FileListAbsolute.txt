@@ -7,3 +7,12 @@ C:\Projects\Burger\Functions\obj\Debug\netcoreapp2.1\Functions.csprojAssemblyRef
 C:\Projects\Burger\Functions\bin\Debug\netcoreapp2.1\Functions.pdb
 C:\Projects\Burger\Functions\obj\Debug\netcoreapp2.1\Functions.dll
 C:\Projects\Burger\Functions\obj\Debug\netcoreapp2.1\Functions.pdb
+C:\Projects\Burger2\Functions\bin\Debug\netcoreapp2.1\Functions.deps.json
+C:\Projects\Burger2\Functions\bin\Debug\netcoreapp2.1\Functions.dll
+C:\Projects\Burger2\Functions\bin\Debug\netcoreapp2.1\Functions.pdb
+C:\Projects\Burger2\Functions\obj\Debug\netcoreapp2.1\Functions.csprojAssemblyReference.cache
+C:\Projects\Burger2\Functions\obj\Debug\netcoreapp2.1\Functions.csproj.CoreCompileInputs.cache
+C:\Projects\Burger2\Functions\obj\Debug\netcoreapp2.1\Functions.AssemblyInfoInputs.cache
+C:\Projects\Burger2\Functions\obj\Debug\netcoreapp2.1\Functions.AssemblyInfo.cs
+C:\Projects\Burger2\Functions\obj\Debug\netcoreapp2.1\Functions.dll
+C:\Projects\Burger2\Functions\obj\Debug\netcoreapp2.1\Functions.pdb
