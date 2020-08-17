@@ -33,12 +33,9 @@ C:\Projects\Burger2\Burger\bin\Debug\netcoreapp2.1\Burger.runtimeconfig.json
 C:\Projects\Burger2\Burger\bin\Debug\netcoreapp2.1\Burger.runtimeconfig.dev.json
 C:\Projects\Burger2\Burger\bin\Debug\netcoreapp2.1\Burger.dll
 C:\Projects\Burger2\Burger\bin\Debug\netcoreapp2.1\Burger.pdb
-C:\Projects\Burger2\Burger\bin\Debug\netcoreapp2.1\Functions.dll
-C:\Projects\Burger2\Burger\bin\Debug\netcoreapp2.1\Functions.pdb
 C:\Projects\Burger2\Burger\obj\Debug\netcoreapp2.1\Burger.csprojAssemblyReference.cache
 C:\Projects\Burger2\Burger\obj\Debug\netcoreapp2.1\Burger.csproj.CoreCompileInputs.cache
 C:\Projects\Burger2\Burger\obj\Debug\netcoreapp2.1\Burger.AssemblyInfoInputs.cache
 C:\Projects\Burger2\Burger\obj\Debug\netcoreapp2.1\Burger.AssemblyInfo.cs
-C:\Projects\Burger2\Burger\obj\Debug\netcoreapp2.1\Burger.csproj.CopyComplete
 C:\Projects\Burger2\Burger\obj\Debug\netcoreapp2.1\Burger.dll
 C:\Projects\Burger2\Burger\obj\Debug\netcoreapp2.1\Burger.pdb

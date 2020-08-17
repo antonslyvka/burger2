@@ -3,7 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using NUnit.Framework;
 using System.Threading;
-
+using System.IO;
 
 namespace Burger.Functions
 {
@@ -15,6 +15,34 @@ namespace Burger.Functions
             string current = driver.Url;
             Assert.IsTrue(URL == current);
         }
+
+        public static bool CheckURLisTrue(IWebDriver driver, string URL)
+        {
+            BasicSleep();
+            string current = driver.Url;
+            if (URL == current)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static void WriteInFile(string FileAddress, string text)
+        {
+            File.AppendAllText(FileAddress, Environment.NewLine + text);
+        }
+
+        public static string TodayDate()
+        {
+            DateTime now = DateTime.Now;
+            string now2 = now.ToString().Substring(0, 9);
+            return now2;
+
+        }
+
 
         public static void WindowSize(IWebDriver driver)
         {

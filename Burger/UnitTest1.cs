@@ -3,6 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using static Burger.Constants.BaseConstants;
 using static Burger.Functions.BaseFunctions;
@@ -19,6 +20,9 @@ namespace Tests
     public class Tests
     {
         public static ChromeDriver driver;
+        string FileAddress = "C://Projects/Burger/Test" + TodayDate() + ".txt";
+
+
 
         [SetUp]
         public void BeforeEachTest()
@@ -34,85 +38,111 @@ namespace Tests
             driver.Close();
         }
 
-        //[OneTimeSetUp]
-        //public void BeforeAllTest()
-        //{
-        //    string x = "06082020";
-        //    File.Create("C://Projects/Burger/Test" + x + ".txt");
-        //}
+        [OneTimeSetUp]
+        public void BeforeAllTest()
+        {
+            File.Create(FileAddress);
+        }
 
 
         [Test]
         public void T1OpenCheck()
         {
             ClickOnButton(driver, UsersButton);
-            CheckURLis(driver, BaseURL);
+            //CheckURLis(driver, BaseURL);
+            bool boolURL = CheckURLisTrue(driver, BaseURL + "user/login/index.html");
+            WriteInFile(FileAddress, "T1 is passed - site is working and URL is " + boolURL);
         }
 
         [Test]
         public void T2EnterCheck()
         {
             ClickOnButton(driver, EnterButton);
-            CheckURLis(driver, BaseURL + "user/login/index.html");
+            //CheckURLis(driver, BaseURL + "user/login/index.html");
+            bool boolURL = CheckURLisTrue(driver, BaseURL + "user/login/index.html");
+            WriteInFile(FileAddress, "T2 is passed - Login page URL is " + boolURL);
         }
 
         [Test]
-        public void T3CheckRegistered()
+        public void T3Search()
         {
-            //int x;
-            SendKeys(driver, "//*[@name='q']", "aza.mailinator");
+            SendKeys(driver, "//*[@name='q']", "aza");
             ClickOnButton(driver, "//*[@class='btn btn-submit']");
-            driver.FindElementByXPath("");
-
-            //if ()
-            //{
-            //    return x = 1;
-            //}
-            //else
-            //{
-            //    return x = 0;
-            //}
+            string result = driver.FindElementByXPath("//div[3]/p").Text.Substring(14, 1);
+            WriteInFile(FileAddress, "T3 is passed - " + result + " elements are found");
         }
 
-        //[Test]
-        //public void T4Register()
-        //{
-        //    ClickOnButton(driver, EnterButton);
-        //    CheckURLis(driver, BaseURL + "user/login/index.html");
-
-        //    SendKeys(driver, "//*[@name='name']", "robert");
-        //    SendKeys(driver, "//*[@name='email']", Login1);
-        //    SendKeys(driver, "//*[@class='row']/div[2]//*[@name='password']", Password);
-        //    ClickOnButton(driver, EnterButton);
-        //    CheckURLis(driver, BaseURL);
-        //    MySleep(20000);
-        //}
-
-        //[Test]
-        //public void T5Login()
-        //{
-        //    LoginFunction( driver, EnterButton, BaseURL, EmailField, Login, PasswordField, Password,
-        //    AuthorizationButton);
-        //}
-
-        //[Test]
-        //public void T6Logout()
-        //{
-        //    driver.FindElement(By.XPath(EnterButton)).Click();
-        //    CheckURLis(driver, BaseURL + "user/login/index.html");
-        //    driver.FindElement(By.XPath(EmailField)).SendKeys(Login);
-        //    driver.FindElement(By.XPath(PasswordField)).SendKeys(Password);
-        //    driver.FindElement(By.XPath(AuthorizationButton)).Click();
-        //    CheckURLis(driver, BaseURL);
-
-        //    ClickOnButton(driver, "//*[@id=\"fat-menu\"]");
-        //    BasicSleep();
-        //    ClickOnButton(driver, "/html/body/div[1]/div[2]/ul/li[3]/ul/li[3]/a");
-        //    CheckURLis(driver, BaseURL);
-
-        //}
+        [Test]
+        public void T4SearchResults()
+        {
+            SendKeys(driver, "//*[@name='q']", "aza");
+            ClickOnButton(driver, "//*[@class='btn btn-submit']");
+            int resultsCount = driver.FindElementsByXPath("//div[3]/table/tbody/tr").Count();
+            WriteInFile(FileAddress, "T4 is passed - " + resultsCount + " elements are found");
+            if ( resultsCount == 0)
+            {
+                WriteInFile(FileAddress, "T4 is passed - users are not found");
+            }
+            else
+            {
+                int z = 1;
+                while (z <= resultsCount)
+                {
+                    string result = driver.FindElementByXPath("//div[3]/table/tbody/tr[" + z + "]/td[2]").Text;
+                    WriteInFile(FileAddress, result + " - user is found");
+                    z++;
+                }
+            }
+        }
 
 
+
+        [Test]
+        public void DoNotT7Register()
+        {
+            ClickOnButton(driver, EnterButton);
+            CheckURLis(driver, BaseURL + "user/login/index.html");
+
+            SendKeys(driver, RegisterNameField, "robert");
+            SendKeys(driver, RegisterEmailField, Login1);
+            SendKeys(driver, RegisterPasswordField, Password);
+            ClickOnButton(driver, RegisterButton);
+            CheckURLis(driver, BaseURL);
+        }
+
+        [Test]
+        public void T5Login()
+        {
+            LoginFunction(driver, Login2, Password2);
+            WriteInFile(FileAddress, " T5 is passed - user is logged in");
+        }
+
+        [Test]
+        public void T6Logout()
+        {
+            LoginFunction(driver, Login2, Password2);
+            LogoutFunction(driver);
+            WriteInFile(FileAddress, " T6 is passed - user is logged out");
+        }
+
+
+        [Test]
+        public void T7RegisterIfNotRegistered()
+        {
+            ClickOnButton(driver, EnterButton);
+            SendKeys(driver, RegisterNameField, "robert");
+            SendKeys(driver, RegisterEmailField, Login1);
+            SendKeys(driver, RegisterPasswordField, Password);
+            ClickOnButton(driver, RegisterButton);
+            BasicSleep();
+            Assert.IsTrue(driver.FindElementByXPath(RegisterError).Displayed);
+            
+
+
+
+
+
+        }
 
 
 
