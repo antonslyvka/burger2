@@ -20,8 +20,14 @@ namespace Tests
     public class Tests
     {
         public static ChromeDriver driver;
-        string FileAddress = "C://Projects/Burger/Test" + TodayDate() + ".txt";
+        string FileAddress = "C://Projects/Burger2/Test" + TodayDate() + ".txt";
 
+
+        //[OneTimeSetUp]
+        //public void BeforeAllTest()
+        //{
+        //    File.Create(FileAddress);
+        //}
 
 
         [SetUp]
@@ -38,11 +44,7 @@ namespace Tests
             driver.Close();
         }
 
-        [OneTimeSetUp]
-        public void BeforeAllTest()
-        {
-            File.Create(FileAddress);
-        }
+        
 
 
         [Test]
@@ -97,18 +99,18 @@ namespace Tests
 
 
 
-        [Test]
-        public void DoNotT7Register()
-        {
-            ClickOnButton(driver, EnterButton);
-            CheckURLis(driver, BaseURL + "user/login/index.html");
+        //[Test]
+        //public void DoNotT7Register()
+        //{
+        //    ClickOnButton(driver, EnterButton);
+        //    CheckURLis(driver, BaseURL + "user/login/index.html");
 
-            SendKeys(driver, RegisterNameField, "robert");
-            SendKeys(driver, RegisterEmailField, Login1);
-            SendKeys(driver, RegisterPasswordField, Password);
-            ClickOnButton(driver, RegisterButton);
-            CheckURLis(driver, BaseURL);
-        }
+        //    SendKeys(driver, RegisterNameField, "robert");
+        //    SendKeys(driver, RegisterEmailField, Login1);
+        //    SendKeys(driver, RegisterPasswordField, Password);
+        //    ClickOnButton(driver, RegisterButton);
+        //    CheckURLis(driver, BaseURL);
+        //}
 
         [Test]
         public void T5Login()
@@ -127,7 +129,7 @@ namespace Tests
 
 
         [Test]
-        public void T7RegisterIfNotRegistered()
+        public void T7RegisterNameError()
         {
             ClickOnButton(driver, EnterButton);
             SendKeys(driver, RegisterNameField, "robert");
@@ -136,14 +138,22 @@ namespace Tests
             ClickOnButton(driver, RegisterButton);
             BasicSleep();
             Assert.IsTrue(driver.FindElementByXPath(RegisterError).Displayed);
-            
-
-
-
-
-
+            Assert.IsTrue(driver.FindElementByXPath(RegisterError).Text.Equals("register_busy (name)"));
         }
 
+
+        [Test]
+        public void T8RegisteremailError()
+        {
+            ClickOnButton(driver, EnterButton);
+            SendKeys(driver, RegisterNameField, "Test" + TodayDate() );
+            SendKeys(driver, RegisterEmailField, Login1);
+            SendKeys(driver, RegisterPasswordField, Password);
+            ClickOnButton(driver, RegisterButton);
+            BasicSleep();
+            Assert.IsTrue(driver.FindElementByXPath(RegisterError).Displayed);
+            Assert.IsTrue(driver.FindElementByXPath(RegisterError).Text.Equals("register_busy (email)"));
+        }
 
 
 

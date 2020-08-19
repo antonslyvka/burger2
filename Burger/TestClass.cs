@@ -19,7 +19,15 @@ namespace Burger
         static string x = "06082020";
         string FileAddress = "C://Projects/Burger/Test" + x + ".txt";
         
-        
+        //public void TestFunction()
+        //{
+        //    int n = 0;
+        //    while (n < 5)
+        //    {
+        //        Console.WriteLine(n);
+        //        n++;
+        //    }
+        //}
 
         
 
@@ -39,8 +47,17 @@ namespace Burger
             ClickOnButton(driver, RegisterButton);
             BasicSleep();
             Assert.IsTrue(driver.FindElementByXPath(RegisterError).Displayed);
+            bool x = driver.FindElementByXPath(RegisterError).Displayed;
 
 
+            //bool y = driver.FindElementByXPath(RegisterError).Equals("register_busy (name)");
+            bool y = driver.FindElementByXPath(RegisterError).Text.Equals("register_busy (name)");
+
+
+
+            string z1 = x.ToString();
+            string z2 = y.ToString();
+            WriteInFile(FileAddress,  z1 + z2);
         }
 
 

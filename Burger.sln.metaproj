@@ -21,20 +21,12 @@
     <CurrentSolutionConfigurationContents>
       <SolutionConfiguration xmlns="">
   <ProjectConfiguration Project="{A70A05E5-28BA-4D32-B979-7B4A596A445E}" AbsolutePath="c:\Projects\Burger2\Burger\Burger.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
-  <ProjectConfiguration Project="{41B877E7-D208-4B7A-9196-7DA2AA6A77D1}" AbsolutePath="c:\Projects\Burger2\Functions\Functions.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
 </SolutionConfiguration>
     </CurrentSolutionConfigurationContents>
   </PropertyGroup>
   <ItemDefinitionGroup />
   <ItemGroup>
     <ProjectReference Include="c:\Projects\Burger2\Burger\Burger.csproj.metaproj">
-      <ToolsVersion>4.0</ToolsVersion>
-      <SkipNonexistentProjects>Build</SkipNonexistentProjects>
-      <AdditionalProperties>Configuration=Debug; Platform=Any CPU; VisualStudioVersion=11.0</AdditionalProperties>
-      <Configuration>Debug</Configuration>
-      <Platform>AnyCPU</Platform>
-    </ProjectReference>
-    <ProjectReference Include="c:\Projects\Burger2\Functions\Functions.csproj.metaproj">
       <ToolsVersion>4.0</ToolsVersion>
       <SkipNonexistentProjects>Build</SkipNonexistentProjects>
       <AdditionalProperties>Configuration=Debug; Platform=Any CPU; VisualStudioVersion=11.0</AdditionalProperties>
@@ -82,21 +74,5 @@
   </Target>
   <Target Name="Burger:Publish">
     <MSBuild Condition="'%(ProjectReference.Identity)' == 'c:\Projects\Burger2\Burger\Burger.csproj.metaproj'" Projects="@(ProjectReference)" Targets="Publish" BuildInParallel="True" ToolsVersion="4.0" Properties="BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" SkipNonexistentProjects="%(ProjectReference.SkipNonexistentProjects)" />
-  </Target>
-  <Target Name="Functions" Outputs="@(FunctionsBuildOutput)">
-    <MSBuild Condition="'%(ProjectReference.Identity)' == 'c:\Projects\Burger2\Functions\Functions.csproj.metaproj'" Projects="@(ProjectReference)" BuildInParallel="True" ToolsVersion="4.0" Properties="BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" SkipNonexistentProjects="%(ProjectReference.SkipNonexistentProjects)">
-      <Output TaskParameter="TargetOutputs" ItemName="FunctionsBuildOutput" />
-    </MSBuild>
-  </Target>
-  <Target Name="Functions:Clean">
-    <MSBuild Condition="'%(ProjectReference.Identity)' == 'c:\Projects\Burger2\Functions\Functions.csproj.metaproj'" Projects="@(ProjectReference)" Targets="Clean" BuildInParallel="True" ToolsVersion="4.0" Properties="BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" SkipNonexistentProjects="%(ProjectReference.SkipNonexistentProjects)" />
-  </Target>
-  <Target Name="Functions:Rebuild" Outputs="@(FunctionsBuildOutput)">
-    <MSBuild Condition="'%(ProjectReference.Identity)' == 'c:\Projects\Burger2\Functions\Functions.csproj.metaproj'" Projects="@(ProjectReference)" Targets="Rebuild" BuildInParallel="True" ToolsVersion="4.0" Properties="BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" SkipNonexistentProjects="%(ProjectReference.SkipNonexistentProjects)">
-      <Output TaskParameter="TargetOutputs" ItemName="FunctionsBuildOutput" />
-    </MSBuild>
-  </Target>
-  <Target Name="Functions:Publish">
-    <MSBuild Condition="'%(ProjectReference.Identity)' == 'c:\Projects\Burger2\Functions\Functions.csproj.metaproj'" Projects="@(ProjectReference)" Targets="Publish" BuildInParallel="True" ToolsVersion="4.0" Properties="BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" SkipNonexistentProjects="%(ProjectReference.SkipNonexistentProjects)" />
   </Target>
 </Project>
